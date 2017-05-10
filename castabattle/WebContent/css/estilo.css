@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+body {
+  background-color: #4A4A4A;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 15%;
+  width: 70%
+}
+
+header {
+  height: 70px;
+  border-bottom: 2px solid #ffffff;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 3rem;
+  color: #49B8E2;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+
+.btn-principal {
+  align-self: center;
+  border-radius: 5px;
+  background-color: #49B8E2;
+  text-align: center;
+  padding: 23px;
+  border: none;
+  width: 250px;
+  height: 70px;
+  font-size: 1.5rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 10px #000000;
+}
+
+.btn-principal:hover {
+  background-color: #F07685;
+  box-shadow: 1px 1px 10px #000000;
+}
+
+footer {
+  height: 20px;
+  border-top: 1px solid #ffffff;
+  text-align: center;
+}
+
+.text-footer {
+  padding: 20px 0;
+  font-size: 0.7rem;
+}
+
+.label-table {
+  width: 75px;
+  height: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.water {
+  background-image: url("../images/water.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+  cursor: pointer;
+}
+
+.fire {
+  background-image: url("../images/fire.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+}

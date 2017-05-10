@@ -19,6 +19,13 @@ public class GameController
 	// TODO - Temporário... Não suporta multiplayer...
 	private Board board;
 	
+	@RequestMapping() // .../pswebproj/spring/game
+	public ModelAndView index()
+	{	
+		ModelAndView mv = new ModelAndView("/index.jsp");
+		return mv;
+	}	
+	
 	@RequestMapping("/start") // .../pswebproj/spring/game/start
 	public ModelAndView start()
 	{
@@ -36,7 +43,7 @@ public class GameController
 		board = new Board();
 		board.initBoard(template);
 		
-		ModelAndView mv = new ModelAndView("/castabattle.jsp");
+		ModelAndView mv = new ModelAndView("/game.jsp");
 		mv.addObject("board",board);
 		return mv;
 	}	
@@ -49,14 +56,28 @@ public class GameController
 	
 	@RequestMapping("/fire") // .../pswebproj/spring/game/fire
 	public ModelAndView helloRequestParam
-	                           (@RequestParam int    line,
-								@RequestParam String column)
+	                           (@RequestParam int line,
+								@RequestParam int column)
 	{
-		CellType type = board.fire(column, line);
+		String x;
+		if 		(column == 0) x = "A";
+		else if (column == 1) x = "A";
+		else if (column == 2) x = "A";
+		else if (column == 3) x = "A";
+		else if (column == 4) x = "A";
+		else if (column == 5) x = "A";
+		else if (column == 6) x = "A";
+		else if (column == 7) x = "A";
+		else if (column == 8) x = "A";
+		else if (column == 9) x = "A";
+		else
+			throw new IllegalArgumentException("Invalid column definition: "+column);
+		
+		CellType type = board.fire(x, line);
 				
 		if (board.hasShip())
 		{
-			ModelAndView mv = new ModelAndView("/castabattle.jsp");
+			ModelAndView mv = new ModelAndView("/game.jsp");
 			mv.addObject("target",type);
 			mv.addObject("board",board);
 			return mv;
