@@ -31,18 +31,18 @@ public class BoardTest
 	@Test
 	public void testWaterFire()
 	{
-		Assert.assertEquals(board.readInGame("A",1),CellType.HIDDEN);
+		Assert.assertEquals(board.readInGame(1,1),CellType.HIDDEN);
 		CellType target = board.fire("A",1);
 		Assert.assertEquals(target,CellType.WATER);
-		Assert.assertEquals(board.readInGame("A",1),CellType.WATER);
+		Assert.assertEquals(board.readInGame(1,1),CellType.WATER);
 	}
 	
 	@Test 
 	public void testShipFire()
 	{
-		Assert.assertEquals(board.readInGame("B",8),CellType.HIDDEN);
+		Assert.assertEquals(board.readInGame(2,8),CellType.HIDDEN);
 		CellType target = board.fire("B",8);
 		Assert.assertEquals(target,CellType.CRUISER);
-		Assert.assertEquals(board.readInGame("B",8),CellType.FIRE);
+		Assert.assertEquals(board.readInGame(2,8),CellType.FIRE);
 	}
 }

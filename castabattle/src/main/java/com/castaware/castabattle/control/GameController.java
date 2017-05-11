@@ -6,6 +6,7 @@ import static com.castaware.castabattle.domain.CellType.WATER;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -42,7 +43,6 @@ public class GameController
 
 		board = new Board();
 		board.initBoard(template);
-		
 		ModelAndView mv = new ModelAndView("/game.jsp");
 		mv.addObject("board",board);
 		return mv;
@@ -54,26 +54,35 @@ public class GameController
 		return start();
 	}
 	
-	@RequestMapping("/fire") // .../pswebproj/spring/game/fire
-	public ModelAndView helloRequestParam
-	                           (@RequestParam int line,
-								@RequestParam int column)
+	@RequestMapping(value="/fire") // .../pswebproj/spring/game/fire
+	public ModelAndView fireBoard(@RequestParam String line, @RequestParam String column)
 	{
+		int l = Integer.parseInt(line);
+		int c = Integer.parseInt(column);
+		
 		String x;
-		if 		(column == 0) x = "A";
-		else if (column == 1) x = "A";
-		else if (column == 2) x = "A";
-		else if (column == 3) x = "A";
-		else if (column == 4) x = "A";
-		else if (column == 5) x = "A";
-		else if (column == 6) x = "A";
-		else if (column == 7) x = "A";
-		else if (column == 8) x = "A";
-		else if (column == 9) x = "A";
+		if 		(c == 1) x = "A";
+		else if (c == 2) x = "B";
+		else if (c == 3) x = "C";
+		else if (c == 4) x = "D";
+		else if (c == 5) x = "E";
+		else if (c == 6) x = "F";
+		else if (c == 7) x = "G";
+		else if (c == 8) x = "H";
+		else if (c == 9) x = "I";
+		else if (c == 10) x = "J";
 		else
 			throw new IllegalArgumentException("Invalid column definition: "+column);
 		
-		CellType type = board.fire(x, line);
+		System.out.println(line);
+		System.out.println(column);
+		System.out.println(l);
+		System.out.println(c);
+		
+		CellType type = board.fire(x, l);
+		
+		System.out.println(board);
+		System.out.println(type);
 				
 		if (board.hasShip())
 		{

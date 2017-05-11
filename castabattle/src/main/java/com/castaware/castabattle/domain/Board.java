@@ -64,10 +64,10 @@ public class Board
 		return target;
 	}
 	
-	public CellType readInGame(String column,int line)
+	public CellType readInGame(int column,int line)
 	{
 		int y = translateLine(line);		
-		int x = translateColumn(column);
+		int x = translateLine(column);
 		
 		CellType target = boardGame[y][x];
 		
