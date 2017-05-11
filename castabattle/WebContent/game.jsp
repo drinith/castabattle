@@ -37,29 +37,29 @@
           </tr>
           <tr>
             <td class="label-table">1</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="water"></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
           </tr>
           <tr>
             <td class="label-table">2</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="hidden"><a href=""></a></td>
+            <td class="water"></td>
             <td class="fire"></td>
-            <td class="water"><a href=""></a></td>
+            <td class="water"></td>
           </tr>
           <tr>
             <td class="label-table">3</td>

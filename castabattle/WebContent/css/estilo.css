@@ -76,12 +76,19 @@ footer {
   text-align: center;
 }
 
+.hidden {
+  background-image: url("../images/hidden.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+  cursor: pointer;
+}
+
 .water {
   background-image: url("../images/water.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
-  cursor: pointer;
 }
 
 .fire {
