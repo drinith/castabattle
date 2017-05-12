@@ -15,6 +15,9 @@
 </head>
 <body>
 	<h1>Casta-Battle!</h1>
+	
+	<h1>${pageContext.request.contextPath}</h1>
+	
 	<hr />
 	<%
 		if (request.getAttribute("board") == null)

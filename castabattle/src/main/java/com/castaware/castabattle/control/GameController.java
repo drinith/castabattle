@@ -43,7 +43,8 @@ public class GameController
 		board = new Board();
 		board.initBoard(template);
 		
-		ModelAndView mv = new ModelAndView("/game.jsp");
+		//USANDO O castabatlle.jsp
+		ModelAndView mv = new ModelAndView("/castabattle.jsp");
 		mv.addObject("board",board);
 		return mv;
 	}	

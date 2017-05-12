@@ -112,8 +112,10 @@ public class Board
 		for(int i=0;i<10;i++)
 		{
 			for (int j = 0; j < boardGame.length; j++) {
-				result = result +"<img src= '/spring/resources/img/"+ boardGame[i][j].toString()+".jpg' />";
+				result = result +"<img src=\"/castabattle/images/"+ boardGame[i][j].toString().toLowerCase()+".jpg\"/>";
+				System.out.println(result);
 			}
+			
 			result=result+"<br>";
 		}
 		
