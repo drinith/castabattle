@@ -43,10 +43,10 @@ public class Board
 		}
 	}
 	
-	public CellType fire(String column,int line)
+	public CellType fire(int column,int line)
 	{
-		int y = translateLine(line);		
-		int x = translateColumn(column);
+		int y = line-1;		
+		int x = column-1;
 		
 		CellType target = boardTemplate[y][x];
 		
@@ -64,17 +64,17 @@ public class Board
 		return target;
 	}
 	
-	public CellType readInGame(String column,int line)
+	public CellType readInGame(int column,int line)
 	{
 		int y = translateLine(line);		
-		int x = translateColumn(column);
+		int x = translateLine(column);
 		
 		CellType target = boardGame[y][x];
 		
 		return target;
 	}
 	
-	public CellType readInTemplate(String column,int line)
+	public CellType readInTemplate(int column,int line)
 	{
 		int y = translateLine(line);		
 		int x = translateColumn(column);
@@ -122,25 +122,16 @@ public class Board
 		return result;
 	}
 	
-	private int translateColumn(String column) 
-	{
-		int x;
-		
-		column = column.toUpperCase();
-		if 		(column.equals("A")) x = 0;
-		else if (column.equals("B")) x = 1;
-		else if (column.equals("C")) x = 2;
-		else if (column.equals("D")) x = 3;
-		else if (column.equals("E")) x = 4;
-		else if (column.equals("F")) x = 5;
-		else if (column.equals("G")) x = 6;
-		else if (column.equals("H")) x = 7;
-		else if (column.equals("I")) x = 8;
-		else if (column.equals("J")) x = 9;
-		else
-			throw new IllegalArgumentException("Invalid column definition: "+column);
+	private int translateColumn(int column) {
+		int x = column - 1;
+
+		if (x < 0 || x > 9) {
+			throw new IllegalArgumentException("Invalid line definition: " + column);
+		}
 		return x;
 	}
+
+	
 
 	private int translateLine(int line) 
 	{

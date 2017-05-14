@@ -20,6 +20,7 @@
       <header>
         <h1>BATALHA NAVAL</h1>
       </header>
+      
       <div class="main">
         <table>
           <tr>
@@ -35,136 +36,35 @@
             <td class="label-table">I</td>
             <td class="label-table">J</td>
           </tr>
+          
+    
+         
+          <c:forEach var="i" begin="1" end="10">
           <tr>
-            <td class="label-table">1</td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="water"></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
+          	<td class="label-table">${i}</td>
+          	<c:forEach var="k" begin="1" end="10">
+          		
+          		  <c:set var="result" value='${board.readInGame(k,i)}'/> 
+         			          		
+          		<c:choose>
+			      	<c:when test="${result=='WATER'}">
+			      	  <td class="water"></td>
+			      	</c:when>
+			      	<c:when test="${result=='FIRE'}">
+			      	  <td class="fire"></td>
+			      	</c:when>
+			      	<c:otherwise>
+			      		<td class="hidden">
+					      	<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}">
+						      	<img alt="atirar" src="${pageContext.request.contextPath}/images/hidden.png">
+					      	</a>
+				      	</td>
+			      	</c:otherwise>
+		      	</c:choose> 
+          	</c:forEach>
           </tr>
-          <tr>
-            <td class="label-table">2</td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="hidden"><a href=""></a></td>
-            <td class="water"></td>
-            <td class="fire"></td>
-            <td class="water"></td>
-          </tr>
-          <tr>
-            <td class="label-table">3</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">4</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="fire"></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">5</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="fire"></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">6</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="fire"></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">7</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">8</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">9</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
-          <tr>
-            <td class="label-table">10</td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="fire"></td>
-            <td class="fire"></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-            <td class="water"><a href=""></a></td>
-          </tr>
+          </c:forEach>
+         
         </table>
       </div>
       <footer>

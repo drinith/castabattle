@@ -36,17 +36,17 @@ public class GameConsole
 			int line = sc.nextInt();
 			sc.nextLine(); // Gasta o buffer de leitura... MMUUAAHUUAAHUUUA
 			System.out.print("Column: ");
-			String column = sc.nextLine();
+			int column = sc.nextInt();
 			
 			CellType type = board.fire(column, line);
 			if (type.isShip())
 				System.out.println("FOGO!!");
 			else
-				System.out.println("ÁGUA...");
+				System.out.println("ï¿½GUA...");
 			
 			System.out.println();			
 		}
 		
-		System.out.println("Frota Destruída!");
+		System.out.println("Frota Destruï¿½da!");
 	}
 }
