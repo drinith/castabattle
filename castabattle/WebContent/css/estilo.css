@@ -77,11 +77,20 @@ footer {
 }
 
 .hidden {
-  background-image: url("../images/hidden.png");
+  text-align: center;
+  cursor: pointer;
+}
+
+.hidden:hover {
+  background-image: url("../images/hidden_over.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
-  cursor: pointer;
+}
+
+.hidden img {
+  height: 70%;
+  width: auto;
 }
 
 .water {
@@ -96,4 +105,8 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
+}
+
+.fim-jogo {
+  color: #ffffff;
 }

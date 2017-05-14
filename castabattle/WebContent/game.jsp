@@ -54,8 +54,10 @@
 			      	  <td class="fire"></td>
 			      	</c:when>
 			      	<c:otherwise>
-				      	<td class="hidden">
-				      		<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}"> A </a>
+			      		<td class="hidden">
+					      	<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}">
+						      	<img alt="atirar" src="${pageContext.request.contextPath}/images/hidden.png">
+					      	</a>
 				      	</td>
 			      	</c:otherwise>
 		      	</c:choose> 

@@ -60,19 +60,8 @@ public class GameController
 		int l = Integer.parseInt(line);
 		int c = Integer.parseInt(column);
 		
-		
-		
-		System.out.println(line);
-		System.out.println(column);
-		System.out.println(l);
-		System.out.println(c);
-		
-		System.out.println(this.board);
-		
 		CellType type = this.board.fire(c, l);
 		
-		System.out.println(this.board);
-		System.out.println(type);
 				
 		if (board.hasShip())
 		{
