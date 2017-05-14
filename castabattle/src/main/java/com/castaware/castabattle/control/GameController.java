@@ -41,8 +41,8 @@ public class GameController
 			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
 			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER} };
 
-		board = new Board();
-		board.initBoard(template);
+		this.board = new Board();
+		this.board.initBoard(template);
 		ModelAndView mv = new ModelAndView("/game.jsp");
 		mv.addObject("board",board);
 		return mv;
@@ -60,28 +60,18 @@ public class GameController
 		int l = Integer.parseInt(line);
 		int c = Integer.parseInt(column);
 		
-		String x;
-		if 		(c == 1) x = "A";
-		else if (c == 2) x = "B";
-		else if (c == 3) x = "C";
-		else if (c == 4) x = "D";
-		else if (c == 5) x = "E";
-		else if (c == 6) x = "F";
-		else if (c == 7) x = "G";
-		else if (c == 8) x = "H";
-		else if (c == 9) x = "I";
-		else if (c == 10) x = "J";
-		else
-			throw new IllegalArgumentException("Invalid column definition: "+column);
+		
 		
 		System.out.println(line);
 		System.out.println(column);
 		System.out.println(l);
 		System.out.println(c);
 		
-		CellType type = board.fire(x, l);
+		System.out.println(this.board);
 		
-		System.out.println(board);
+		CellType type = this.board.fire(c, l);
+		
+		System.out.println(this.board);
 		System.out.println(type);
 				
 		if (board.hasShip())

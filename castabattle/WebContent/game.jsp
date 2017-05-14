@@ -37,20 +37,25 @@
             <td class="label-table">J</td>
           </tr>
           
+    
+         
           <c:forEach var="i" begin="1" end="10">
           <tr>
           	<td class="label-table">${i}</td>
           	<c:forEach var="k" begin="1" end="10">
+          		
+          		  <c:set var="result" value='${board.readInGame(k,i)}'/> 
+         			          		
           		<c:choose>
-			      	<c:when test="${board.readInGame(i, k).equals('WATER')}">
+			      	<c:when test="${result=='WATER'}">
 			      	  <td class="water"></td>
 			      	</c:when>
-			      	<c:when test="${board.readInGame(i, k).equals('FIRE')}">
+			      	<c:when test="${result=='FIRE'}">
 			      	  <td class="fire"></td>
 			      	</c:when>
 			      	<c:otherwise>
 				      	<td class="hidden">
-				      		<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}"></a>
+				      		<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}"> A </a>
 				      	</td>
 			      	</c:otherwise>
 		      	</c:choose> 

@@ -32,7 +32,7 @@ public class BoardTest
 	public void testWaterFire()
 	{
 		Assert.assertEquals(board.readInGame(1,1),CellType.HIDDEN);
-		CellType target = board.fire("A",1);
+		CellType target = board.fire(1,1);
 		Assert.assertEquals(target,CellType.WATER);
 		Assert.assertEquals(board.readInGame(1,1),CellType.WATER);
 	}
@@ -41,7 +41,7 @@ public class BoardTest
 	public void testShipFire()
 	{
 		Assert.assertEquals(board.readInGame(2,8),CellType.HIDDEN);
-		CellType target = board.fire("B",8);
+		CellType target = board.fire(2,8);
 		Assert.assertEquals(target,CellType.CRUISER);
 		Assert.assertEquals(board.readInGame(2,8),CellType.FIRE);
 	}
