@@ -16,7 +16,7 @@ a {
 
 .container {
   margin: 0 15%;
-  width: 70%
+  width: 70%;
 }
 
 header {
@@ -27,14 +27,28 @@ header {
 
 h1 {
   font-weight: bolder;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #49B8E2;
 }
 
 .main {
   display: flex;
   justify-content: center;
-  height: 500px;
+  height: 600px;
+  flex-direction: column;
+}
+
+.main-bottom {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+}
+
+.target {
+  color: #F07685;
+  text-align: center;
+  font-size: .8rem;
 }
 
 .btn-principal {
@@ -58,6 +72,13 @@ h1 {
   box-shadow: 1px 1px 10px #000000;
 }
 
+.btn-small {
+  width: 100px;
+  height: 50px;
+  font-size: 1rem;
+  padding: 15px;
+}
+
 footer {
   height: 20px;
   border-top: 1px solid #ffffff;
@@ -69,6 +90,10 @@ footer {
   font-size: 0.7rem;
 }
 
+table {
+  align-self: center;
+}
+
 .label-table {
   width: 75px;
   height: 40px;
@@ -76,9 +101,12 @@ footer {
   text-align: center;
 }
 
+.hidden, .water, .fire {
+  text-align: center;
+}
+
 .hidden {
   text-align: center;
-  cursor: pointer;
 }
 
 .hidden:hover {
@@ -93,20 +121,42 @@ footer {
   width: auto;
 }
 
-.water {
-  background-image: url("../images/water.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40%;
+.water img {
+  height: 70%;
+  width: auto;
 }
 
-.fire {
-  background-image: url("../images/fire.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40%;
+.fire img {
+  height: 70%;
+  width: auto;
 }
 
-.fim-jogo {
+.end-game {
   color: #ffffff;
+  text-align: center;
+}
+
+/* RESPONSIVIDADE */
+@media only screen and (max-width: 1200px) {
+	.hidden:hover {
+	  background-size: 50%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.hidden:hover {
+	  background-size: 65%;
+	}
+	h1 {
+	  font-size: 2rem;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.hidden:hover {
+	  background-size: 100%;
+	}
+	h1 {
+	  font-size: 1.6rem;
+	}
 }

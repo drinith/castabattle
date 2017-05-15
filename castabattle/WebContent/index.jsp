@@ -10,7 +10,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>:::Batalha Naval:::</title>
+    <title>:::The Naval Battle:::</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilo.css">
@@ -18,10 +18,10 @@
   <body>
     <div class="container">
       <header>
-        <h1>BATALHA NAVAL</h1>
+        <h1>THE NAVAL BATTLE</h1>
       </header>
       <div class="main">
-        <a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start">iniciar jogo</a>
+        <a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start">start game</a>
       </div>
       <footer>
         <p class="text-footer">Programação Servidores Web</p>
