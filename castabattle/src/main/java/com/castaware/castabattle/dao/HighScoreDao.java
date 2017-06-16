@@ -12,5 +12,5 @@ public class HighScoreDao extends _CrudDaoHibernate<HighScore>
 	{
 		return HighScore.class;
 	}
-
+	
 }

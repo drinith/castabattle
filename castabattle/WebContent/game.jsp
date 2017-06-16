@@ -20,7 +20,7 @@
       <header>
         <h1>THE NAVAL BATTLE</h1>
       </header>
-      
+      Jogador: ${param.nome}
       <div class="main">
         <table>
           <tr>
@@ -57,7 +57,7 @@
 				      	</c:when>
 				      	<c:otherwise>
 				      		<td class="hidden">
-						      	<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}">
+						      	<a href="${pageContext.request.contextPath}/spring/game/fire?line=${i}&column=${k}&nome=${param.nome}">
 							      	<img alt="shot here?" src="${pageContext.request.contextPath}/images/hidden.png">
 						      	</a>
 					      	</td>
