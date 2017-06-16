@@ -1,7 +1,7 @@
 package com.castaware.castabattle.control;
 
 import static com.castaware.castabattle.domain.CellType.CRUISER;
-import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.Date;import java.text.DateFormat;import java.text.SimpleDateFormat;import org.springframework.stereotype.Controller;
+import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.Date;import java.text.DateFormat;import java.text.SimpleDateFormat;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,9 +12,9 @@ import com.castaware.castabattle.domain.CellType;import com.castaware.castabatt
 @Controller
 @RequestMapping("/game") // .../pswebproj/spring/game
 public class GameController
-{
+{	@Autowired	private HighScoreDao hsDao;
 	// TODO - Temporário... Não suporta multiplayer...
-	private Board board;
+	private Board board;	private int tiro;
 	
 	@RequestMapping() // .../pswebproj/spring/game
 	public ModelAndView index()
@@ -25,7 +25,7 @@ public class GameController
 	
 	@RequestMapping("/start") // .../pswebproj/spring/game/start
 	public ModelAndView start(@RequestParam String nome)
-	{
+	{		//zerar a contagem tiro		tiro=0;		
 		CellType[][] template = new CellType[][]  { {WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},   
 			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},	
 			{WATER, WATER,   WATER ,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		                                      
@@ -52,7 +52,7 @@ public class GameController
 	
 	@RequestMapping(value="/fire") // .../pswebproj/spring/game/fire
 	public ModelAndView fireBoard(@RequestParam String line, @RequestParam String column, @RequestParam String nome)
-	{
+	{		tiro+=1;
 		int l = Integer.parseInt(line);
 		int c = Integer.parseInt(column);
 		
@@ -67,7 +67,7 @@ public class GameController
 			return mv;
 		}
 		else
-		{			DateFormat df = new SimpleDateFormat ("dd/MM/yyyy");			HighScore highScore = new HighScore();			highScore.setJogador(nome);												HighScoreDao daoH= new HighScoreDao();			daoH.save(highScore);							
+		{			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);							
 			ModelAndView mv = new ModelAndView("/endgame.jsp");
 			return mv;
 		}
