@@ -1,7 +1,7 @@
 package com.castaware.castabattle.control;
 
 import static com.castaware.castabattle.domain.CellType.CRUISER;
-import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.Date;import java.text.DateFormat;import java.text.SimpleDateFormat;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Controller;
+import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.Date;import java.text.DateFormat;import java.text.SimpleDateFormat;import java.util.List;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -67,8 +67,8 @@ public class GameController
 			return mv;
 		}
 		else
-		{			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);							
-			ModelAndView mv = new ModelAndView("/endgame.jsp");
+		{			//Termino do jogo guardar os valores do score do jogador			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);										//Trazer a lista para listar na página do endgame			List<HighScore> listHigh = hsDao.retrieveAll();									
+			ModelAndView mv = new ModelAndView("/endgame.jsp");			mv.addObject("listaScore",listHigh);			
 			return mv;
 		}
 	}
