@@ -68,10 +68,21 @@
           </c:forEach>
         </table>
         <div class="main-bottom">
-	        <c:if test="${target != null}">
-	        	<p class="target">You shot in: ${target}</p>
-	        </c:if>
-	        <a class="btn-principal btn-small" href="${pageContext.request.contextPath}/spring/game/reset">reset</a>
+        	<div class="main-bottom-detail">
+		        <c:if test="${target != null}">
+		        	<c:choose>
+		        	<c:when test="${target == 'WATER'}">
+		        		<p class="target-water">You shot in: ${target}</p>
+		        	</c:when>
+		        	<c:otherwise>
+	        			<p class="target-right">You shot in: ${target}</p>
+		        	</c:otherwise>
+		        	</c:choose>
+		        </c:if>
+	        </div>
+	        <div class="main-bottom-links">
+	        	<a class="btn-small" href="${pageContext.request.contextPath}/spring/game/reset">reset</a>
+	        </div>
         </div>
       </div>
       <footer>
