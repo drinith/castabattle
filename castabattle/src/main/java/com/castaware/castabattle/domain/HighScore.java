@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class HighScore 
+public class HighScore implements Comparable<HighScore>
 {
 	@Id
 	@Column
@@ -57,5 +57,16 @@ public class HighScore
 	}
 	public void setData2(Date data2) {
 		this.data2 = data2;
+	}
+	
+	@Override
+	public int compareTo(HighScore hs) {
+		if (this.pontos > hs.getPontos()) {
+	          return -1;
+	     }
+	     if (this.pontos < hs.getPontos()) {
+	          return 1;
+	     }
+	     return 0;
 	}
 }

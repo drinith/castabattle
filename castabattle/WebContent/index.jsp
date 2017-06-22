@@ -10,6 +10,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>:::The Naval Battle:::</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
@@ -21,12 +22,13 @@
         <h1>THE NAVAL BATTLE</h1>
       </header>
       <div class="main">
-      	<form action="${pageContext.request.contextPath}/spring/game/start" method="get">
-      		Nome do Jogador <input type="text" name="nome"/><br>
-      		<input type="submit" value="start game">
-      	
+      	<form class="form-container" action="${pageContext.request.contextPath}/spring/game/start" method="get">
+      		<div class="input-container">
+	      		<label for="nome">name:</label>
+	      		<input type="text" name="nome" placeholder="Player Name"/>
+      		</div>
+      		<button type="submit" class="btn-principal" >start game</button>
       	</form>
-      	<a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start">start game</a>
       </div>
       <footer>
         <p class="text-footer">Programação Servidores Web</p>
