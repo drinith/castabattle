@@ -21,7 +21,12 @@
         <h1>THE NAVAL BATTLE</h1>
       </header>
       <div class="main">
-        <a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start">start game</a>
+      	<form action="${pageContext.request.contextPath}/spring/game/start" method="get">
+      		Nome do Jogador <input type="text" name="nome"/><br>
+      		<input type="submit" value="start game">
+      	
+      	</form>
+      	<a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start">start game</a>
       </div>
       <footer>
         <p class="text-footer">Programação Servidores Web</p>

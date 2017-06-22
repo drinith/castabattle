@@ -11,13 +11,51 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+
         
     <!-- Pacotes a serem escaneados -->
 	<context:component-scan base-package="com.castaware.castabattle.control" />
-	
-	<!--  Define quais anotações estão habilitadas -->
-    <mvc:annotation-driven />
-    
-    	        
+	<context:component-scan base-package="com.castaware.castabattle.dao" />
+
+	<!-- Define quais anotações estão habilitadas -->
+	<mvc:annotation-driven />
+	<!-- Configuração da Camada de Dados -->
+	<bean name="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.transaction.auto_close_session">true</prop>
+				<prop key="hibernate.hbm2ddl.auto"> create	</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.castaware.castabattle.domain</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3311/castabattlebd" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		<property name="removeAbandoned" value="true" />
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="10" />
+	</bean>	        
+	        
 </beans>
