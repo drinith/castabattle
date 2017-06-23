@@ -5,8 +5,7 @@ import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;import com.castaware.castabattle.dao.HighScoreDao;import com.castaware.castabattle.domain.Board;
+import org.springframework.web.bind.annotation.RequestParam;import org.springframework.web.bind.annotation.SessionAttribute;import org.springframework.web.servlet.ModelAndView;import com.castaware.castabattle.dao.HighScoreDao;import com.castaware.castabattle.domain.Board;
 import com.castaware.castabattle.domain.CellType;import com.castaware.castabattle.domain.HighScore;
 
 @Controller
@@ -45,9 +44,9 @@ public class GameController
 	}	
 	
 	@RequestMapping("/reset") // .../pswebproj/spring/game/reset
-	public ModelAndView reset()
-	{
-		return start(null);
+	public ModelAndView reset(@SessionAttribute String name)
+	{		
+		return start(name);
 	}
 	
 	@RequestMapping(value="/fire") // .../pswebproj/spring/game/fire
