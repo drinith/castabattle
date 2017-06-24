@@ -1,11 +1,11 @@
-<%@page import="org.apache.taglibs.standard.tag.common.core.ForEachSupport"%>
-<%@ page language="java" 
-          contentType="text/html; charset=ISO-8859-1" 
-          pageEncoding="ISO-8859-1"%>
-                 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.castaware.castabattle.domain.Board" %>
-<%@page import="com.castaware.castabattle.domain.CellType" %>
+<%@page
+	import="org.apache.taglibs.standard.tag.common.core.ForEachSupport"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="com.castaware.castabattle.domain.Board"%>
+<%@page import="com.castaware.castabattle.domain.CellType"%>
 
 <html>
   <head>
@@ -86,8 +86,10 @@
         </div>
       </div>
       <footer>
-        <p class="text-footer">Programação Servidores Web</p>
+        <p class="text-footer">Programaï¿½ï¿½o Servidores Web</p>
       </footer>
     </div>
   </body>
+        Pontos: ${pontos}
+					href="${pageContext.request.contextPath}/spring/game/reset?nome=${param.nome}">reset</a>
 </html>

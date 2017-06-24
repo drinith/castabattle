@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<footer>
-			<p class="text-footer">Programação Servidores Web</p>
+			<p class="text-footer">Programaï¿½ï¿½o Servidores Web</p>
 		</footer>
 	</div>
 </body>
