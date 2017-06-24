@@ -22,11 +22,14 @@
       </header>
       <div class="main">
       	<form action="${pageContext.request.contextPath}/spring/game/start" method="get">
-      		Nome do Jogador <input type="text" name="nome"/><br>
-      		<input type="submit" value="start game">
+      		Nome do Jogador <input class="input-text" type="text" name="nome"/>
+      		
+      		<br>
+      		<br>
+      		<input class="btn-principal" type="submit" value="start game">
       	
       	</form>
-      	<a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start">start game</a>
+      
       </div>
       <footer>
         <p class="text-footer">Programação Servidores Web</p>
