@@ -67,6 +67,10 @@ h1 {
   box-shadow: inset 1px 1px 10px #000000;
 }
 
+.input-text {
+    color: #4A4A4A;
+}
+
 .btn-principal:hover {
   background-color: #F07685;
   box-shadow: 1px 1px 10px #000000;

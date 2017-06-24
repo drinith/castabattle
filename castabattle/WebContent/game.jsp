@@ -24,7 +24,7 @@
 			<h1>THE NAVAL BATTLE</h1>
 		</header>
 
-        Jogador: ${nome}
+        Jogador: ${nome}<br>
         
         Pontos: ${pontos}
        

@@ -26,7 +26,7 @@
 		<div class="main">
 			<br>
 			SCORE
-			<table>
+			<table style="color: white  ">
 			
 			<tr><td>Nome</td><td>Pontos</td></tr>
 			<c:forEach items="${listaScore}" var="item">
@@ -38,8 +38,7 @@
 		    		
 
 			<h1 class="end-game">End Game</h1>
-			<a class="btn-principal"
-				href="${pageContext.request.contextPath}/spring/game/start?nome=${nome}">start
+			<a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start?nome=${nome}">start
 				game</a>
 		</div>
 		<footer>
