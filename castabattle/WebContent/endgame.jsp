@@ -29,9 +29,9 @@
 			<form class="form-container" action="${pageContext.request.contextPath}/spring/game/start" method="get">
 	      		<div class="input-container">
 		      		<label for="nome">name:</label>
-		      		<input type="text" name="nome" placeholder="Player Name"/>
+		      		<input type="text" name="nome" placeholder="Player Name" value="${nome}"/>
 	      		</div>
-	      		<button type="submit" class="btn-principal" >start game</button>
+	      		<button type="submit" class="btn-principal" >start again</button>
       		</form>
 			<div class="score-container">
 				<h1>Score:</h1>
@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<footer>
-			<p class="text-footer">Programaï¿½ï¿½o Servidores Web</p>
+			<p class="text-footer">Programação Servidores Web</p>
 		</footer>
 	</div>
 </body>

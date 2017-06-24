@@ -20,8 +20,21 @@
       <header>
         <h1>THE NAVAL BATTLE</h1>
       </header>
-      Jogador: ${param.nome}
       <div class="main">
+      	<div class="player-detail">
+      		<p>Jogador: <span>${param.nome}</span></p>
+      		<c:if test="${target != null}">
+	        	<c:choose>
+		        	<c:when test="${target == 'WATER'}">
+		        		<p class="target-water">You shot in: ${target}</p>
+		        	</c:when>
+		        	<c:otherwise>
+	        			<p class="target-right">You shot in: ${target}</p>
+		        	</c:otherwise>
+	        	</c:choose>
+	        </c:if>
+      		<p>Pontos: <span>${pontos}</span></p>
+      	</div>
         <table>
           <tr>
             <th></th>
@@ -68,28 +81,12 @@
           </c:forEach>
         </table>
         <div class="main-bottom">
-        	<div class="main-bottom-detail">
-		        <c:if test="${target != null}">
-		        	<c:choose>
-		        	<c:when test="${target == 'WATER'}">
-		        		<p class="target-water">You shot in: ${target}</p>
-		        	</c:when>
-		        	<c:otherwise>
-	        			<p class="target-right">You shot in: ${target}</p>
-		        	</c:otherwise>
-		        	</c:choose>
-		        </c:if>
-	        </div>
-	        <div class="main-bottom-links">
-	        	<a class="btn-small" href="${pageContext.request.contextPath}/spring/game/reset">reset</a>
-	        </div>
+	        <a class="btn-small" href="${pageContext.request.contextPath}/spring/game/reset?nome=${param.nome}">reset</a>
         </div>
       </div>
       <footer>
-        <p class="text-footer">Programaï¿½ï¿½o Servidores Web</p>
+        <p class="text-footer">Programação Servidores Web</p>
       </footer>
     </div>
   </body>
-        Pontos: ${pontos}
-					href="${pageContext.request.contextPath}/spring/game/reset?nome=${param.nome}">reset</a>
 </html>

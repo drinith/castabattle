@@ -21,7 +21,7 @@
       <header>
         <h1>THE NAVAL BATTLE</h1>
       </header>
-      <div class="main">
+      <div class="main main-index">
       	<form class="form-container" action="${pageContext.request.contextPath}/spring/game/start" method="get">
       		<div class="input-container">
 	      		<label for="nome">name:</label>
@@ -31,7 +31,7 @@
       	</form>
       </div>
       <footer>
-        <p class="text-footer">Programaï¿½ï¿½o Servidores Web</p>
+        <p class="text-footer">Programação Servidores Web</p>
       </footer>
     </div>
   </body>
