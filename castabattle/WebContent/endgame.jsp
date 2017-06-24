@@ -39,7 +39,7 @@
 
 			<h1 class="end-game">End Game</h1>
 			<a class="btn-principal"
-				href="${pageContext.request.contextPath}/spring/game/start">start
+				href="${pageContext.request.contextPath}/spring/game/start?nome=${nome}">start
 				game</a>
 		</div>
 		<footer>

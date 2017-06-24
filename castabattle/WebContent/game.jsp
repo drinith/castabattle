@@ -24,21 +24,11 @@
 			<h1>THE NAVAL BATTLE</h1>
 		</header>
 
-		<c:choose>
-			<c:when test="${empty param.nome}">
-        Jogador: ${param.name}
-    </c:when>
-			<c:otherwise>
-        Jogador: ${param.nome}
-        <c:set var="name" scope="session" value="${param.nome}" />
+        Jogador: ${nome}
+        
+        Pontos: ${pontos}
        
-				
-			</c:otherwise>
-		</c:choose>
-
-${sessionScope[name]}
-
-
+		
 
 		<div class="main">
 			<table>
@@ -91,7 +81,7 @@ ${sessionScope[name]}
 					<p class="target">You shot in: ${target}</p>
 				</c:if>
 				<a class="btn-principal btn-small"
-					href="${pageContext.request.contextPath}/spring/game/reset">reset</a>
+					href="${pageContext.request.contextPath}/spring/game/reset?nome=${param.nome}">reset</a>
 			</div>
 		</div>
 		<footer>

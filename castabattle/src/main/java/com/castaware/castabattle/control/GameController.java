@@ -13,7 +13,7 @@ import com.castaware.castabattle.domain.CellType;import com.castaware.castabatt
 public class GameController
 {	@Autowired	private HighScoreDao hsDao;
 	// TODO - Temporário... Não suporta multiplayer...
-	private Board board;	private int tiro;
+	private Board board;	private int tiro;	private int pontos;
 	
 	@RequestMapping() // .../pswebproj/spring/game
 	public ModelAndView index()
@@ -24,7 +24,7 @@ public class GameController
 	
 	@RequestMapping("/start") // .../pswebproj/spring/game/start
 	public ModelAndView start(@RequestParam String nome)
-	{		//zerar a contagem tiro		tiro=0;		
+	{		//zerar a contagem tiro		tiro=0;		pontos=100;		
 		CellType[][] template = new CellType[][]  { {WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},   
 			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},	
 			{WATER, WATER,   WATER ,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		                                      
@@ -44,9 +44,9 @@ public class GameController
 	}	
 	
 	@RequestMapping("/reset") // .../pswebproj/spring/game/reset
-	public ModelAndView reset(@SessionAttribute String name)
+	public ModelAndView reset(@RequestParam String nome)
 	{		
-		return start(name);
+		return start(nome);
 	}
 	
 	@RequestMapping(value="/fire") // .../pswebproj/spring/game/fire
@@ -61,13 +61,12 @@ public class GameController
 		if (board.hasShip())
 		{
 			ModelAndView mv = new ModelAndView("/game.jsp");
-			mv.addObject("target",type);
+			mv.addObject("target",type);			mv.addObject("pontos",pontos-tiro);
 			mv.addObject("board",board);
 			return mv;
 		}
 		else
-		{			//Termino do jogo guardar os valores do score do jogador			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);										//Trazer a lista para listar na página do endgame			List<HighScore> listHigh = hsDao.retrieveAll();									
-			ModelAndView mv = new ModelAndView("/endgame.jsp");			mv.addObject("listaScore",listHigh);			
+		{			//Termino do jogo guardar os valores do score do jogador			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);										//Trazer a lista para listar na página do endgame			List<HighScore> listHigh = hsDao.retrieveAll();			ModelAndView mv = new ModelAndView("/endgame.jsp");			mv.addObject("nome",nome);			mv.addObject("listaScore",listHigh);			
 			return mv;
 		}
 	}
