@@ -10,6 +10,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>:::The Naval Battle:::End Game</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/normalize.css">
@@ -23,26 +24,29 @@
 		<header>
 			<h1>THE BATTLE NAVAL</h1>
 		</header>
-		<div class="main">
-			<br>
-			SCORE
-			<table style="color: white  ">
-			
-			<tr><td>Nome</td><td>Pontos</td></tr>
-			<c:forEach items="${listaScore}" var="item">
-				<tr>
-					<td><c:out value="${item.jogador}" /></td><td><c:out value="${item.pontos}" /></td>
-				</tr>
-			</c:forEach>
-			</table>
-		    		
-
+		<div class="main endgame">
 			<h1 class="end-game">End Game</h1>
-			<a class="btn-principal" href="${pageContext.request.contextPath}/spring/game/start?nome=${nome}">start
-				game</a>
+			<form class="form-container" action="${pageContext.request.contextPath}/spring/game/start" method="get">
+	      		<div class="input-container">
+		      		<label for="nome">name:</label>
+		      		<input type="text" name="nome" placeholder="Player Name"/>
+	      		</div>
+	      		<button type="submit" class="btn-principal" >start game</button>
+      		</form>
+			<div class="score-container">
+				<h1>Score:</h1>
+				<table>
+					<c:forEach items="${listaScore}" var="item">
+						<tr>
+							<td class="item-name"><c:out value="${item.jogador}" /></td>
+							<td class="item-score"><c:out value="${item.pontos}" /></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
 		</div>
 		<footer>
-			<p class="text-footer">Programação Servidores Web</p>
+			<p class="text-footer">Programaï¿½ï¿½o Servidores Web</p>
 		</footer>
 	</div>
 </body>

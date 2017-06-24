@@ -31,11 +31,53 @@ h1 {
   color: #49B8E2;
 }
 
+.form-container {
+	width: 100%;
+	min-heigth: 400px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	font-size: 2rem;
+	text-align: center;
+	width: 40%;
+}
+
+input {
+	width: 60%;
+	height: 45px;
+	font-family: "Orbitron", sans-serif; 
+	padding: 10px;
+	background-color: #4A4A4A;
+	border: none;
+	border-bottom: 3px solid white;
+	transition: border-bottom 1s;
+}
+
+input:focus {
+	border-bottom: 3px solid #F07685;
+	outline: none;
+}
+
+.input-container {
+	display: flex;
+	justify-content: space-around;
+	margin: 3rem;
+}
+
 .main {
   display: flex;
   justify-content: center;
   height: 600px;
   flex-direction: column;
+}
+
+.endgame {
+	height: auto;
 }
 
 .main-bottom {
@@ -45,9 +87,15 @@ h1 {
   align-items: center;
 }
 
-.target {
+.target-right {
   color: #F07685;
-  text-align: center;
+  text-align: left;
+  font-size: .8rem;
+}
+
+.target-water {
+  color: #49B8E2;
+  text-align: left;
   font-size: .8rem;
 }
 
@@ -65,6 +113,7 @@ h1 {
   font-weight: 400;
   cursor: pointer;
   box-shadow: inset 1px 1px 10px #000000;
+  transition: all .5s;
 }
 
 .input-text {
@@ -77,10 +126,15 @@ h1 {
 }
 
 .btn-small {
-  width: 100px;
-  height: 50px;
   font-size: 1rem;
+  text-aling: center;
   padding: 15px;
+  transition: all .5s;
+}
+
+.btn-small:hover {
+  color: #F07685;
+  font-size: 1.1rem;
 }
 
 footer {
@@ -140,6 +194,40 @@ table {
   text-align: center;
 }
 
+.main-bottom-detail {
+  width: 80%;
+  padding-left: 8%;
+}
+
+.main-bottom-links {
+  width: 20%;
+}
+
+.score-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid #49B8E2;
+	margin-top: 4rem;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.item-name, .item-score {
+	width: 50%;
+	font-size: 1.5rem;
+  	color: #49B8E2;
+  	text-align: center;
+	line-height: 2rem;
+}
+
+.item-score {
+	color: #fff;
+}
+
 /* RESPONSIVIDADE */
 @media only screen and (max-width: 1200px) {
 	.hidden:hover {
@@ -157,10 +245,28 @@ table {
 }
 
 @media only screen and (max-width: 600px) {
+	.container {
+	  width: 100%;
+	  margin: 0;
+	}
 	.hidden:hover {
 	  background-size: 100%;
 	}
 	h1 {
 	  font-size: 1.6rem;
+	}
+	.input-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin: 10px 5px;
+	}
+	label {
+	font-size: 1rem;
+	width: 100%;
+	}
+	
+	input {
+		width: 100%;
 	}
 }
