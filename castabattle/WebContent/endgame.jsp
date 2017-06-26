@@ -28,7 +28,7 @@
 			<h1 class="end-game">End Game</h1>
 			<form class="form-container" action="${pageContext.request.contextPath}/spring/game/start" method="get">
 	      		<div class="input-container">
-		      		<label for="nome">name:</label>
+		      		<label for="nome">Player:</label>
 		      		<input type="text" name="nome" placeholder="Player Name" value="${nome}"/>
 	      		</div>
 	      		<button type="submit" class="btn-principal" >start again</button>

@@ -22,7 +22,7 @@
       </header>
       <div class="main">
       	<div class="player-detail">
-      		<p>Jogador: <span>${param.nome}</span></p>
+      		<p>Player: <span>${param.nome}</span></p>
       		<c:if test="${target != null}">
 	        	<c:choose>
 		        	<c:when test="${target == 'WATER'}">
@@ -33,7 +33,7 @@
 		        	</c:otherwise>
 	        	</c:choose>
 	        </c:if>
-      		<p>Pontos: <span>${pontos}</span></p>
+      		<p>Score: <span>${pontos}</span></p>
       	</div>
         <table>
           <tr>
@@ -81,7 +81,7 @@
           </c:forEach>
         </table>
         <div class="main-bottom">
-	        <a class="btn-small" href="${pageContext.request.contextPath}/spring/game/reset?nome=${param.nome}">reset</a>
+	        <a class="btn-small" href="${pageContext.request.contextPath}/spring/game/reset?nome=${param.nome}">reset game</a>
         </div>
       </div>
       <footer>
