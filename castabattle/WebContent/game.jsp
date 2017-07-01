@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <header>
-        <h1>THE NAVAL BATTLE</h1>
+        <h1>THE NAVAL BATTLE 2</h1>
       </header>
       <div class="main">
       	<div class="player-detail">
