@@ -45,4 +45,6 @@ public class BoardTest
 		Assert.assertEquals(target,CellType.CRUISER);
 		Assert.assertEquals(board.readInGame(2,8),CellType.FIRE);
 	}
+	
+	
 }
