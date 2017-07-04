@@ -48,7 +48,11 @@
 	<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+<<<<<<< HEAD
 		<property name="url" value="jdbc:mysql://172.31.49.70:3306/sampledb" />
+=======
+		<property name="url" value="jdbc:mysql://10.129.92.151:3306/sampledb" />
+>>>>>>> branch 'master' of https://github.com/drinith/castabattle.git
 		<property name="username" value="user" />
 		<property name="password" value="pass" />
 		<property name="removeAbandoned" value="true" />
