@@ -49,7 +49,7 @@
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 
-		<property name="url" value="jdbc:mysql://mysql.felipe-project.svc:3306/sampledb" />
+		<property name="url" value="jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/sampledb" />
 		<property name="username" value="user" />
 		<property name="password" value="pass" />
 		<property name="removeAbandoned" value="true" />
