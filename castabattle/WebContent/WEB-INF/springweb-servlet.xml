@@ -31,7 +31,7 @@
 				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.transaction.auto_close_session">true</prop>
-				<prop key="hibernate.hbm2ddl.auto"> create	</prop>
+				<prop key="hibernate.hbm2ddl.auto"> auto</prop>
 			</props>
 		</property>
 		<property name="packagesToScan">
@@ -49,9 +49,11 @@
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 
-		<property name="url" value="jdbc:mysql://mysql:3306/sampledb" />
+		<property name="url" value="jdbc:mysql://mysql/castabattlebd" />
 		<property name="username" value="user" />
 		<property name="password" value="pass" />
+<!-- 		<property name="username" value="root" /> -->
+<!-- 		<property name="password" value="root" /> -->
 		<property name="removeAbandoned" value="true" />
 		<property name="initialSize" value="5" />
 		<property name="maxActive" value="10" />

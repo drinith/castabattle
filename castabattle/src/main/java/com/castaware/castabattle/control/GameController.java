@@ -1,5 +1,5 @@
 package com.castaware.castabattle.control;
-import static com.castaware.castabattle.domain.CellType.CRUISER;import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.Date;import java.util.Collections;import java.util.List;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Controller;import org.springframework.web.bind.annotation.RequestMapping;import org.springframework.web.bind.annotation.RequestParam;import org.springframework.web.servlet.ModelAndView;import com.castaware.castabattle.dao.HighScoreDao;import com.castaware.castabattle.domain.Board;import com.castaware.castabattle.domain.CellType;import com.castaware.castabattle.domain.HighScore;
+import static com.castaware.castabattle.domain.CellType.CRUISER;import static com.castaware.castabattle.domain.CellType.WATER;import java.sql.Date;import java.util.Collections;import java.util.List;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Controller;import org.springframework.web.bind.annotation.RequestMapping;import org.springframework.web.bind.annotation.RequestMethod;import org.springframework.web.bind.annotation.RequestParam;import org.springframework.web.servlet.ModelAndView;import com.castaware.castabattle.dao.HighScoreDao;import com.castaware.castabattle.domain.Board;import com.castaware.castabattle.domain.CellType;import com.castaware.castabattle.domain.HighScore;
 @Controller
 @RequestMapping("/game") // .../pswebproj/spring/game
 public class GameController
@@ -36,14 +36,14 @@ public class GameController
 	{
 		return start(nome);
 	}
-	@RequestMapping(value="/fire") // .../pswebproj/spring/game/fire
+	@RequestMapping(value="/fire", method = RequestMethod.GET) // .../pswebproj/spring/game/fire
 	public ModelAndView fireBoard(@RequestParam String line, @RequestParam String column, @RequestParam String nome)
 	{		tiro+=1;
 		int l = Integer.parseInt(line);
 		int c = Integer.parseInt(column);
 		CellType type = this.board.fire(c, l);
 		if (board.hasShip())
-		{
+		{						
 			ModelAndView mv = new ModelAndView("/game.jsp");
 			mv.addObject("target",type);			mv.addObject("pontos",pontos-tiro);
 			mv.addObject("board",board);

@@ -24,7 +24,7 @@
 		<header>
 			<h1>THE BATTLE NAVAL</h1>
 		</header>
-		<div class="main endgame">
+		<div class="main endgame" id="main">
 			<h1 class="end-game">End Game</h1>
 			<form class="form-container" action="${pageContext.request.contextPath}/spring/game/start" method="get">
 	      		<div class="input-container">
