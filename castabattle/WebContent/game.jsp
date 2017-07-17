@@ -57,8 +57,7 @@
 				
 				
 			}
-		</script>
-	
+		</script>	
 	
 	<div class="container">
 		<header>
