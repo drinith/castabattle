@@ -49,7 +49,7 @@
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 
-		<property name="url" value="jdbc:mysql://mysql/castabattlebd" />
+		<property name="url" value="jdbc:mysql://mysql/sampledb" />
 		<property name="username" value="user" />
 		<property name="password" value="pass" />
 <!-- 		<property name="username" value="root" /> -->
