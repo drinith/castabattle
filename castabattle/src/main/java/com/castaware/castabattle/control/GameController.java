@@ -50,7 +50,7 @@ public class GameController
 			return mv;
 		}
 		else
-		{			//Termino do jogo guardar os valores do score do jogador			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);										//Trazer a lista para listar na página do endgame			List<HighScore> listHigh = hsDao.retrieveAll();						Collections.sort(listHigh);						ModelAndView mv = new ModelAndView("/game.jsp");			mv.addObject("nome",nome);			mv.addObject("listaScore",listHigh);			
+		{			//Termino do jogo guardar os valores do score do jogador			HighScore hs = new HighScore();			hs.setJogador(nome);			hs.setPontos(100-tiro);			hs.setData1(new Date(System.currentTimeMillis()));			hs.setData2(new Date(System.currentTimeMillis()));			hsDao.save(hs);										//Trazer a lista para listar na página do endgame			List<HighScore> listHigh = hsDao.retrieveAll();						Collections.sort(listHigh);						ModelAndView mv = new ModelAndView("/endgame.jsp");			mv.addObject("nome",nome);			mv.addObject("listaScore",listHigh);			
 			return mv;
 		}
 	}
