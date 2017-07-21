@@ -17,8 +17,8 @@ Link para acesso no navegador: **http://localhost:8080/pswebproj/spring/game**
 
 **Game modes**
 - [ ]  Modo PLAYER vs. CPU
-      * Sistema de Jogadas em Turnos
-      * Inteligência da CPU (pode ser implementada pelo padrão GOF Strategy)
+* Sistema de Jogadas em Turnos
+* Inteligência da CPU (pode ser implementada pelo padrão GOF Strategy)
 - [ ] Modo PLAYER vs. PLAYER
 
 **Game options (Board):**
