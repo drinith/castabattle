@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.castaware.castabattle.dao.HighScoreDao;
 import com.castaware.castabattle.domain.Board;
+import com.castaware.castabattle.domain.BoardGenerator;
 import com.castaware.castabattle.domain.CellType;
 import com.castaware.castabattle.domain.HighScore;
 
